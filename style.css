@@ -36,7 +36,7 @@ header {
 
 .head > h1 {
   font-family: "Vujahday Script", cursive;
-  font-size: 7rem;
+  font-size: 100px;
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -50,8 +50,68 @@ header {
   margin: 0px;
 }
 
+@media (max-width: 1210px) {
+  .head>h1 {
+    font-size: 75px;
+  }
+  
+  .head > p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  .head>h1 {
+    font-size: 60px;
+  }
+  
+  .head > p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 520px) {
+  .head>h1 {
+    font-size: 40px;
+  }
+  
+  .head > p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .head>h1 {
+    font-size: 30px;
+  }
+  
+  .head > p {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .head>h1 {
+    font-size: 150px;
+  }
+  
+  .head > p {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .head>h1 {
+    font-size: 200px;
+  }
+  
+  .head > p {
+    font-size: 50px;
+  }
+}
+
 .content {
-  height: 70vh;
+  height: 80vh;
 }
 
 .am {
@@ -103,6 +163,36 @@ div {
   font-size: 30px;
 }
 
+@media (max-width: 1210px) {
+  .am>h1{ font-size: 200px; }
+  .am > p,pre,div { font-size: 20px; }
+}
+
+@media (max-width: 680px) {
+  .am>h1{ font-size: 150px; }
+  .am > p,pre,div { font-size: 15px; }
+}
+
+@media (max-width: 520px) {
+  .am>h1{ font-size: 100px; }
+  .am > p,pre,div { font-size: 10px; }
+}
+
+@media (max-width: 380px) {
+  .am>h1{ font-size: 70px; }
+  .am > p,pre,div { font-size: 8px; }
+}
+
+@media (min-width: 1600px) {
+  .am>h1{ font-size: 400px; }
+  .am > p,pre,div { font-size: 40px; }
+}
+
+@media (min-width: 2000px) {
+  .am>h1{ font-size: 500px; }
+  .am > p,pre,div { font-size: 50px; }
+}
+
 .socials {
   width: 70vw;
   display: flex;
@@ -111,8 +201,46 @@ div {
   margin-right: 50px;
 }
 
+@media (max-width: 380px) {
+  .socials {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .socials > svg {
   width: 60px;
+  margin: 10px;
+}
+
+@media (max-width: 1210px) {
+  .socials > svg {
+    width: 40px;
+  }
+}
+
+@media (max-width: 680px) {
+  .socials > svg {
+    width: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .socials > svg {
+    width: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .socials > svg {
+    width: 80px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .socials > svg {
+    width: 100px;
+  }
 }
 
 .skill > h1 {
@@ -123,7 +251,7 @@ div {
 }
 
 .cont > h1 {
-  margin-left: 100px;
+  margin-left: 20px;
 }
 
 
