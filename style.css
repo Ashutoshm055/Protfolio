@@ -27,6 +27,10 @@
     user-select:none;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 header {
   height: 100vh;
   display: flex;
@@ -72,23 +76,24 @@ header {
 
 @media (max-width: 520px) {
   .head>h1 {
-    font-size: 40px;
+    font-size: 50px;
   }
   
   .head > p {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
   .head>h1 {
     font-size: 30px;
+    width: 200px;
   }
   
   .head > p {
-    font-size: 8px;
+    font-size: px;
   }
-}
+} */
 
 @media (min-width: 1600px) {
   .head>h1 {
@@ -119,6 +124,13 @@ header {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   align-content: center;
+}
+
+#cv{
+  position: relative;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 4;
 }
 
 @keyframes slide-right {
@@ -152,7 +164,7 @@ header {
   animation-timeline: view();
 }
 
-.am > p,
+.am > span,
 pre,
 div {
   grid-row: 1/2;
@@ -165,32 +177,32 @@ div {
 
 @media (max-width: 1210px) {
   .am>h1{ font-size: 200px; }
-  .am > p,pre,div { font-size: 20px; }
+  .am pre,div,#cv { font-size: 25px; }
 }
 
 @media (max-width: 680px) {
-  .am>h1{ font-size: 150px; }
-  .am > p,pre,div { font-size: 15px; }
+  .am>h1{ font-size: 160px; }
+  .am pre,div,#cv { font-size: 20px; }
 }
 
 @media (max-width: 520px) {
-  .am>h1{ font-size: 100px; }
-  .am > p,pre,div { font-size: 10px; }
+  .am>h1{ font-size: 140px; }
+  .am pre,div,#cv { font-size: 17px; }
 }
 
 @media (max-width: 380px) {
-  .am>h1{ font-size: 70px; }
-  .am > p,pre,div { font-size: 8px; }
+  .am>h1{ font-size: 120px; }
+  .am pre,div,#cv { font-size: 15px; }
 }
 
 @media (min-width: 1600px) {
   .am>h1{ font-size: 400px; }
-  .am > p,pre,div { font-size: 40px; }
+  .am pre,div,#cv { font-size: 40px; }
 }
 
 @media (min-width: 2000px) {
   .am>h1{ font-size: 500px; }
-  .am > p,pre,div { font-size: 50px; }
+  .am pre,div,#cv { font-size: 50px; }
 }
 
 .socials {
@@ -209,8 +221,10 @@ div {
 }
 
 .socials > svg {
+  z-index: 1;
   width: 60px;
   margin: 10px;
+  cursor: pointer;
 }
 
 @media (max-width: 1210px) {
@@ -222,12 +236,6 @@ div {
 @media (max-width: 680px) {
   .socials > svg {
     width: 30px;
-  }
-}
-
-@media (max-width: 520px) {
-  .socials > svg {
-    width: 20px;
   }
 }
 
