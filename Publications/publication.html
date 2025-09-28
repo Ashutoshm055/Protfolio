@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publications</title>
+    <link
+      rel="icon"
+      href="../images/Geometric A letterform.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../styles_mod.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f7f9fc;
+        font-family: "Lora", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #333;
+        background-image: url(../images/output-onlinepngtools.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+
+      .message-box {
+        text-align: center;
+        padding: 2rem;
+        background-color: #ffffffdd;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        max-width: 500px;
+      }
+
+      .message-box h1 {
+        font-family: "Alumni Sans", sans-serif;
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        color: #2c3e50;
+      }
+
+      .message-box p {
+        font-size: 1rem;
+        color: #000000;
+      }
+
+      @media (max-width: 600px) {
+        .message-box h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body id="Publications">
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../About_me/about.html">About Me</a></li>
+        <li><a href="./CV/My_cv.html">CV</a></li>
+        <li><a href="#Publications">Publications</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- menu icon code -->
+    <div id="main-wrapper" class="wrapper">
+      <nav id="nav-menu">
+        <div class="menu-icon-container">
+          <div class="menu-icon">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+          </div>
+        </div>
+
+        <div class="menu-list-container">
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../About_me/about.html">About Me</a></li>
+            <li><a href="./CV/My_cv.html">CV</a></li>
+            <li><a href="./Publications/publication.html">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="message-box">
+      <h1>Oops! No Publications Yet</h1>
+      <p>But exciting work is underway — stay tuned for upcoming updates.</p>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>

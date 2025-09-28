@@ -1,9 +1,11 @@
 const insta = document.querySelector("#insta");
 const linkedin = document.querySelector("#linkedin");
 const yt = document.querySelector("#yt");
-const discord = document.querySelector("#discord");
+const email = document.querySelector("#email");
 const github = document.querySelector("#github");
 const cv = document.querySelector("#cv");
+const mainWrapper = document.querySelector("#main-wrapper");
+const menu = document.querySelector(".menu-icon");
 
 insta.addEventListener("click", () => {
     window.location.href = "https://www.instagram.com/theashutosh_mohapatra/";
@@ -17,8 +19,8 @@ yt.addEventListener("click", () => {
     window.location.href = "https://www.youtube.com/@AshutoshMohapatra16810";
 });
 
-discord.addEventListener("click", () => {
-    window.location.href = "";
+email.addEventListener("click", () => {
+    window.location.href = "mailto: ashutosh.mohapatra055@gmail.com";
 });
 
 github.addEventListener("click", () => {
@@ -27,6 +29,14 @@ github.addEventListener("click", () => {
 
 cv.addEventListener("click", () => {
     window.open("./PDFs/Ashutosh Resume.pdf", "_blank");
+});
+
+
+// menu icon
+menu.addEventListener("click", function(){
+    this.classList.toggle('active');
+    mainWrapper.classList.toggle('active');
+    document.body.classList.toggle('no-scroll');
 });
 
 

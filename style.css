@@ -31,8 +31,35 @@ body{
   overflow-x: hidden;
 }
 
+.navbar {
+  padding: 2rem 3rem;
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.navbar > ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar > ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar > ul li a:hover {
+  color: #33333366;
+}
+
 header {
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;

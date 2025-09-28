@@ -1,0 +1,698 @@
+@import url("https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+/* --- Global and Body Styles --- */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #333;
+  --Alter-color: #ffffff;
+  --title-font: "Vujahday Script", cursive;
+  --main-font: "Lora", serif;
+  --heading-font: "Alata", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--Alter-color);
+  color: var(--primary-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem; /* Base font size (16px) */
+}
+
+body.no-scroll {
+    overflow: hidden;
+  }
+  
+/* NavBar */
+.navbar {
+  padding: 2rem 3rem;
+  font-family: var(--heading-font);
+  font-weight: 100;
+  font-style: normal;
+}
+
+.navbar > ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar > ul li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar > ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .navbar > ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+/* responsive for smaller screen (laptop to smartphone) */
+@media (max-width: 1210px) {
+  .navbar {
+    padding: 2rem 3rem 1rem 3rem;
+  }
+
+  .navbar > ul {
+    gap: 3rem;
+  }
+
+  .navbar > ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .navbar {
+    padding: 2rem 1.5rem 1rem 1.5rem;
+  }
+
+  .navbar > ul {
+    gap: 2rem;
+  }
+
+  .navbar > ul li a {
+    font-size: 0.93rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    display: none;
+  }
+  .wrapper {
+    display: block !important;
+  }
+}
+
+/* responsive for larger screens (desktops to tv) */
+@media (min-width: 1600px) {
+  .navbar {
+    padding: 3rem 4rem 2rem 4rem;
+  }
+
+  .navbar > ul {
+    gap: 4rem;
+  }
+
+  .navbar > ul li a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .navbar {
+    padding: 4rem 5rem 0rem 5rem;
+  }
+
+  .navbar > ul {
+    gap: 6rem;
+  }
+
+  .navbar > ul li a {
+    font-size: 2.5rem;
+  }
+}
+
+.wrapper {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  perspective: 1100px;
+}
+
+nav#nav-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  z-index: 1000;
+  overflow: hidden;
+  transform: translate(0, 0);
+  transition: all 0.4s ease-in;
+}
+
+nav .menu-icon-container {
+  position: absolute;
+  top: 2rem;
+  right: 8%;
+  z-index: 9999;
+}
+
+nav .menu-list-container {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  transform: translate(100%, 0);
+  opacity: 0;
+  transition: transform 0.6s, opacity 1s;
+}
+
+nav .menu-list-container ul {
+  list-style: none;
+  transform: translate(0, -50%);
+  width: 100%;
+  font-family: var(--heading-font);
+  font-weight: 100;
+  font-style: normal;
+  padding: 0;
+}
+
+nav .menu-list-container ul li {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+nav .menu-list-container ul li a {
+    display: inline-block; 
+    position: relative;
+    text-decoration: none;
+    color: var(--Alter-color);
+  }
+  
+  nav .menu-list-container ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--Alter-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  nav .menu-list-container ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+/* Menu Icon (Hamburger) */
+.menu-icon {
+  display: block;
+  float: left;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.menu-icon span {
+  display: block;
+  width: 22px;
+  height: 4px;
+  background: #333333;
+  margin-bottom: 2px;
+  border-radius: 1px;
+  transition: all 0.4s ease-out;
+}
+
+.menu-icon span.bar1 {
+  margin-top: 2px;
+}
+
+.menu-icon:hover span {
+  margin-bottom: 4px;
+}
+
+.menu-icon:hover span.bar1 {
+  margin-top: 0px;
+}
+
+/* when menu is open*/
+.wrapper.active nav {
+  backdrop-filter: blur(10px);
+  /* for older browser versions */
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.wrapper.active nav .menu-list-container {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.menu-icon.active {
+  transform: rotate(-45deg);
+}
+
+.menu-icon.active:hover span {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.menu-icon.active .bar1 {
+  transform: rotate(0deg) translateY(6px);
+}
+
+.menu-icon.active .bar2 {
+  opacity: 0;
+}
+
+.menu-icon.active .bar3 {
+  transform: rotate(-90deg) translateX(6px);
+}
+
+/* header */
+h1 {
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 0rem 1.5rem 2rem 1.5rem;
+}
+
+/* For larger screens (desktops to tv) */
+@media (min-width: 1600px) {
+  body {
+    font-size: 1.15rem; /* Slightly larger base font */
+  }
+}
+@media (min-width: 2000px) {
+  body {
+    font-size: 1.3rem; /* Even larger for very big screens */
+  }
+}
+
+/* --- About Section --- */
+.about-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container {
+  width: 80rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+.about-image {
+  flex-shrink: 0;
+  width: 18.75rem; /* 300px */
+  height: 25rem; /* 400px */
+  border-radius: 9.375rem 9.375rem 0 0; /* 150px */
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.387) 0rem 0.625rem 0.9375rem -0.1875rem,
+    rgba(0, 0, 0, 0.509) 0rem 0.25rem 0.375rem -0.125rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 45rem;
+  position: relative;
+  top: 4rem;
+}
+
+.about-text img {
+  position: absolute;
+  top: -7rem;
+  left: 5rem;
+  height: 4em;
+}
+
+.about-text h1 {
+  position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.about-text h1 span {
+  position: relative;
+  bottom: 2rem;
+  padding-left: 13rem;
+  font-family: var(--title-font);
+}
+
+.about-text p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  padding-left: 6.25rem; /* 100px */
+  text-indent: 5rem;
+  text-align: justify;
+  position: relative;
+  bottom: 3rem;
+}
+
+/* Responsive styles for the About Section */
+@media (max-width: 1210px) {
+  .about-container {
+    width: 100%;
+    gap: 2rem;
+  }
+  .about-text {
+    max-width: 50%;
+  }
+  .about-text p {
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-section {
+    min-height: auto;
+    padding-top: 2rem;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  .about-image {
+    width: 15.625rem; /* 250px */
+    height: 20.8125rem; /* 333px */
+  }
+  .about-text {
+    max-width: 100%;
+    top: 0;
+  }
+  .about-text img {
+    display: none;
+  }
+
+  /* Add the letter 'A' before the rest of the name */
+  .about-text h1 span::before {
+    content: "A";
+  }
+
+  .about-text h1 span {
+    padding-left: 0;
+    position: static;
+    display: block;
+  }
+  .about-text p {
+    padding: 0;
+    text-indent: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-section {
+    padding-top: 4rem;
+  }
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+  .about-text p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .about-container {
+    gap: 4rem; 
+  }
+  .about-image {
+    width: 22.5rem; 
+    height: 30rem; 
+    border-radius: 11.25rem 11.25rem 0 0;
+  }
+  .about-text h1 {
+    font-size: 3.8rem; 
+  }
+  .about-text p {
+    font-size: 1.4rem; 
+  }
+  .about-text img {
+    top: -8rem;
+    left: 2.3rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .about-container {
+    gap: 6rem; 
+    width: 100rem; 
+  }
+  .about-image {
+    width: 27rem;
+    height: 36rem;
+    border-radius: 13.5rem 13.5rem 0 0;
+  }
+  .about-text {
+    max-width: 55rem;
+  }
+  .about-text h1 {
+    font-size: 4.5rem;
+  }
+  .about-text p {
+    font-size: 1.6rem; 
+  }
+    .about-text img {
+    top: -9.5rem;
+    left: 0.5rem;
+  }
+}
+
+/* --- General Content Styles --- */
+h2 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--Alter-color);
+  padding-bottom: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  filter: drop-shadow(5px 5px 5px rgb(0, 0, 0));
+}
+
+h2 span {
+  height: 90%;
+  border-bottom: 0.2rem solid white;
+}
+
+/* Responsive styles for Headings */
+@media (max-width: 520px) {
+  h2 {
+    font-size: 2.35rem;
+  }
+}
+
+/* responsive for larger screens (desktops to tv) */
+@media (min-width: 1600px) {
+  h2 {
+    font-size: 3.8rem;
+  }
+  .entry-title {
+    font-size: 2rem !important;
+  }
+  .entry-main p {
+    font-size: 1.3rem !important;
+  }
+  li {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  h2 {
+    font-size: 4.5rem;
+  }
+  .entry-title {
+    font-size: 2.2rem !important;
+  }
+  .entry-main p {
+    font-size: 1.5rem !important;
+  }
+  li {
+    font-size: 1.5rem;
+  }
+}
+
+/* --- Entry Styling (Education, Experience, etc.) --- */
+.static-content {
+  margin: 3rem 0rem 3rem 0rem;
+}
+
+.entry {
+  margin: 1.5rem;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.entry-header-main p,
+.entry-header p {
+  margin: 0;
+}
+
+.entry-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.entry-main p {
+  margin-bottom: 0.5rem;
+  text-indent: 1.875rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* Responsive styles for Entries */
+@media (max-width: 680px) {
+  section {
+      padding: 0rem;
+  }
+  .entry-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .entry-title {
+    font-size: 1.3rem;
+  }
+  .entry-main p {
+    font-size: 1.1rem;
+  }
+}
+
+/* --- List Styling (for Research Interest and commented Projects) --- */
+ul {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.5625rem;
+}
+
+/* li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-family: var(--main-font);
+} */
+
+/* Responsive styles for lists on smaller screens */
+/* @media (max-width: 680px) {
+  ul {
+    padding-left: 1.25rem;
+  }
+
+  li {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+} 
+
+@media (max-width: 520px) {
+  li {
+    font-size: 1rem;
+  }
+}*/
+
+/* --- Styles for Commented-Out Sections (Kept for future use) --- */
+/* Publications Section */
+/* #publications .entry-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#publications p {
+  margin: 0.2rem 0;
+} */
+
+/* Projects Section */
+/* .date-location {
+  text-align: right;
+  padding-left: 1rem;
+} */
+
+/* Responsive styles for commented-out section classes */
+/* @media (max-width: 680px) {
+  .date-location {
+    text-align: left;
+    padding-left: 0;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+  }
+} */
+
+/* --- Footer --- */
+footer {
+  display: flex;
+  height: 2rem;
+  font-size: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  background: #000000;
+  color: var(--Alter-color);
+}
+
+/* --- The Parallax Window --- */
+.parallax-window {
+  min-height: 20vh;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Assigning different background images to each window --- */
+.bg1 {
+  background-image: url("../images/Education_bg.jpeg");
+}
+
+.bg2 {
+  background-image: url("../images/BayondAcademics_bg.jpg");
+}
+
+.bg3 {
+  background-image: url("../images/Interest_bg.jpg");
+}
