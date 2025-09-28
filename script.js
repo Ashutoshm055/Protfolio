@@ -3,7 +3,7 @@ const linkedin = document.querySelector("#linkedin");
 const yt = document.querySelector("#yt");
 const email = document.querySelector("#email");
 const github = document.querySelector("#github");
-const cv = document.querySelector("#cv");
+const ab = document.querySelector("#AB");
 const mainWrapper = document.querySelector("#main-wrapper");
 const menu = document.querySelector(".menu-icon");
 
@@ -27,8 +27,8 @@ github.addEventListener("click", () => {
     window.location.href = "https://github.com/Ashutoshm055";
 });
 
-cv.addEventListener("click", () => {
-    window.open("./PDFs/Ashutosh Resume.pdf", "_blank");
+ab.addEventListener("click", () => {
+    window.location.href = "./About_me/about.html";
 });
 
 
