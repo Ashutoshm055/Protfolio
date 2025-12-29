@@ -27,7 +27,7 @@
   user-select: none;
 }
 
-html{
+html {
   width: 100%;
   height: 100%;
   scroll-behavior: smooth;
@@ -41,8 +41,8 @@ body {
 }
 
 body.no-scroll {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
 .navbar {
   padding: 2rem 3rem;
@@ -69,22 +69,22 @@ body.no-scroll {
 }
 
 .navbar > ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .navbar > ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar > ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 /* responsive for smaller screen (laptop to smartphone) */
 @media (max-width: 1210px) {
@@ -209,29 +209,29 @@ nav .menu-list-container ul li {
 }
 
 nav .menu-list-container ul li a {
-    display: inline-block; 
-    position: relative;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  nav .menu-list-container ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #000000;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  nav .menu-list-container ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
+
+nav .menu-list-container ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav .menu-list-container ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 /* Menu Icon (Hamburger) */
 .menu-icon {
@@ -245,7 +245,7 @@ nav .menu-list-container ul li a {
   display: block;
   width: 22px;
   height: 4px;
-  background: #333333;
+  background-color: #333333;
   margin-bottom: 2px;
   border-radius: 1px;
   transition: all 0.4s ease-out;
@@ -348,7 +348,7 @@ header {
     font-size: 0.8125rem; /* 13px */
   }
 
-  header{
+  header {
     height: 100vh;
   }
 }
@@ -388,10 +388,10 @@ header {
   height: 80vh;
 }
 
-@media (max-width: 700px){
-    .content {
-        height: 60vh;
-      }
+@media (max-width: 700px) {
+  .content {
+    height: 60vh;
+  }
 }
 
 .am {
