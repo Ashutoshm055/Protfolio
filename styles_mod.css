@@ -187,6 +187,20 @@ body.no-scroll {
   z-index: 1000;
 }
 
+/* prevent the off-canvas wrapper from blocking underlying page taps when closed */
+.wrapper {
+  pointer-events: none;
+}
+.wrapper.active {
+  pointer-events: auto;
+}
+
+/* ensure the menu icon remains clickable even when the wrapper is otherwise inert */
+nav .menu-icon-container {
+  pointer-events: auto;
+  z-index: 1002;
+}
+
 nav#nav-menu {
   color: #333;
   position: fixed;
