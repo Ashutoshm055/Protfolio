@@ -1,288 +1,482 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ashutosh Mohapatra About Me</title>
+    <title>About Me</title>
     <link
       rel="icon"
       href="../images/Geometric A letterform.jpg"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="ab.css" />
+    <script>
+      window.addEventListener("load", function () {
+        const loader = document.getElementById("loading-screen");
+        const content = document.getElementById("main-content");
+
+        // 1. Prepare content state
+        content.style.display = "block";
+
+        // 2. Small delay to ensure the browser registers the display:block
+        setTimeout(() => {
+          loader.classList.add("loader-hidden");
+          content.classList.add("visible");
+        }, 10);
+
+        // 3. Clean up the DOM
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 800);
+      });
+    </script>
+    <style>
+      .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 9999;
+        /* transition effect */
+        transition:
+          opacity 0.6s,
+          transform 0.6s;
+      }
+
+      .loader {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: linear-gradient(0deg, #ffffff 50%, #000000 100%);
+        animation: spin 1s linear infinite;
+      }
+
+      .loader-hidden {
+        opacity: 0;
+        transform: scale(1.2); /* Zooms out toward the user */
+        filter: blur(10px);
+      }
+
+      .inner-circle {
+        width: 90%;
+        height: 90%;
+        background-color: white;
+        border-radius: 50%;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Hide the main content initially */
+      #main-content {
+        display: none; /* Keep this as is for your loader script */
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+      }
+
+      #main-content.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
   </head>
   <body id="AB">
-    <nav class="navbar">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#AB">About Me</a></li>
-        <li><a href="../CV/My_cv.html">CV</a></li>
-        <li><a href="../Publications/publication.html">Publications</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- menu icon code -->
-    <div id="main-wrapper" class="wrapper">
-      <nav id="nav-menu">
-        <div class="menu-icon-container">
-          <div class="menu-icon">
-            <span class="bar1"></span>
-            <span class="bar2"></span>
-            <span class="bar3"></span>
-          </div>
-        </div>
-
-        <div class="menu-list-container">
-          <ul>
-            <li><a href="../index.html" class="click">Home</a></li>
-            <li><a href="#AB" class="click">About Me</a></li>
-            <li><a href="../CV/My_cv.html" class="click">CV</a></li>
-            <li><a href="../Publications/publication.html" class="click">Publications</a></li>
-            <li><a href="../index.html#contact" class="click">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+    <div class="loader-container" id="loading-screen">
+      <div class="loader">
+        <div class="inner-circle"></div>
+      </div>
     </div>
 
-    <section id="about" class="about-section">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="../images/MyPicture.jpg" alt="Ashutosh Mohapatra" />
-        </div>
-        <div class="about-text">
-          <h1>
-            <img src="../images/sign.png" alt="initA" />
-            <span>shutosh Mohapatra</span>
-          </h1>
-          <p>
-            Hello there! I've always seen technology as more than just lines of
-            code; to me, it's a language for solving human puzzles. As a
-            Computer Science student at Odisha University of Technology &
-            Research, I'm driven by a deep curiosity for the space where the
-            immense power of Cloud Computing meets the insightful stories told
-            by Data Analytics. I thrive on building solutions that feel
-            tangible, bridging the gap between abstract algorithms and the
-            real-world challenges people face every day.
-          </p>
-        </div>
-      </div>
-    </section>
+    <div id="main-content">
+      <nav class="navbar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#AB">About Me</a></li>
+          <li><a href="../CV/My_cv.html">CV</a></li>
+          <li><a href="../Publications/publications.html">Publications</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-    <main>
-      <div class="parallax-window bg1">
-        <h2><span>Education</span></h2>
+      <!-- menu icon code -->
+      <div id="main-wrapper" class="wrapper">
+        <nav id="nav-menu">
+          <div class="menu-icon-container">
+            <div class="menu-icon">
+              <span class="bar1"></span>
+              <span class="bar2"></span>
+              <span class="bar3"></span>
+            </div>
+          </div>
+
+          <div class="menu-list-container">
+            <ul>
+              <li><a href="../index.html" class="click">Home</a></li>
+              <li><a href="#AB" class="click">About Me</a></li>
+              <li><a href="../CV/My_cv.html" class="click">CV</a></li>
+              <li>
+                <a href="../Publications/publications.html" class="click"
+                  >Publications</a
+                >
+              </li>
+              <li><a href="../index.html#contact" class="click">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
-      <section id="education" class="static-content">
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-header-main">
-              <p class="entry-title">
-                Odisha University of Technology & Research
+
+      <section id="about" class="about-section">
+        <div class="about-container">
+          <div class="about-image">
+            <img src="../images/MyPicture.jpg" alt="Ashutosh Mohapatra" />
+          </div>
+          <div class="about-text">
+            <h1>
+              <img src="../images/sign.png" alt="initA" />
+              <span>shutosh Mohapatra</span>
+            </h1>
+            <p>
+              I'm an undergraduate pursuing a B.Tech in Computer Science and
+              Engineering at Odisha University of Technology & Research.
+              Honestly, I'm not particularly drawn to academics for its own
+              sake—what truly drives me is research. I'm fascinated by real
+              problems in cloud computing, distributed systems, and sustainable
+              technology, and I spend most of my time investigating these areas
+              deeply. For me, being a student is just the framework; research is
+              where my curiosity actually lives.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <main>
+        <div class="parallax-window bg1">
+          <h2><span>Education</span></h2>
+        </div>
+        <section id="education" class="static-content">
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-header-main">
+                <p class="entry-title">
+                  Odisha University of Technology & Research
+                </p>
+              </div>
+            </div>
+            <div class="entry-main">
+              <p>
+                My B.Tech in Computer Science and Engineering at OUTR has been
+                far more than just a pursuit of a degree—it's been my gateway
+                into the world of research and discovery. With a CGPA of 9.4/10,
+                I've learned that exceptional grades are merely the visible
+                outcome of something deeper: the ability to think critically, to
+                question the status quo, and to transform classroom concepts
+                into real-world solutions.
+              </p>
+
+              <p>
+                What makes this journey uniquely valuable is that I've had the
+                privilege to dive into research—something that doesn't come
+                naturally to everyone in India, where the academic culture often
+                prioritizes placement and marks over genuine inquiry. But I
+                chose differently. I sought out mentors, I collaborated with
+                experienced researchers, and I've spent the last few years
+                investigating problems at the intersection of cloud computing,
+                distributed systems, and sustainable technology. From
+                architecting energy-aware cloud simulations to exploring
+                quantum-classical hybrid scheduling frameworks, every project
+                has taught me that research isn't just about publishing
+                papers—it's about developing a mindset of curiosity and
+                innovation. This phase has fundamentally shaped who I am as a
+                technologist: someone who doesn't just learn theory, but someone
+                who pushes boundaries to make technology better, smarter, and
+                more sustainable.
               </p>
             </div>
           </div>
-          <div class="entry-main">
-            <p>
-              My academic journey at OUTR, Bhubaneswar, where I’m pursuing a
-              B.Tech in Computer Science and Engineering, has been fueled by
-              curiosity and a genuine love for learning. With a CGPA of 9.4/10,
-              I’ ve built a strong foundation across diverse areas, from the
-              structured logic of Computational Theory to the data-driven world
-              of Analytics and the forward-looking possibilities of Machine
-              Learning.
-            </p>
 
-            <p>
-              What excites me the most is bringing ideas from the classroom into
-              the real world. I’ve turned concepts into projects, contributed to
-              research, and explored hands-on problem solving through
-              internships that exposed me to real challenges in technology.
-              These experiences have shaped me not just as a student of computer
-              science, but as someone eager to innovate, experiment, and create
-              meaningful impact.
-            </p>
-          </div>
-        </div>
+          <div class="entry">
+            <div class="entry-header">
+              <div class="entry-header-main">
+                <p class="entry-title">
+                  Bhubanananda Odisha School of Engineering
+                </p>
+              </div>
+            </div>
+            <div class="entry-main">
+              <p>
+                My Diploma in Computer Science (2024, 89.7%) was my first brush
+                with the real world of technology. But more importantly, it was
+                where I discovered my hunger for understanding not just
+                <em>how</em> systems work, but how they work
+                <em>in practice</em>.
+              </p>
 
-        <div class="entry">
-          <div class="entry-header">
-            <div class="entry-header-main">
-              <p class="entry-title">
-                Bhubanananda Odisha School of Engineering
+              <p>
+                During this time, I pursued an internship at Tata Consultancy
+                Services, one of India's largest IT corporations. That
+                experience exposed me to the corporate machinery—agile
+                workflows, enterprise-scale development, and the realities of
+                building software for real clients. I worked on responsive web
+                interfaces and front-end integration, and while I gained
+                invaluable insights into how large organizations function, I
+                realized that pure front-end development wasn't my calling. I
+                also explored opportunities with startups, and while I
+                appreciated their energy and innovation, I found myself drawn to
+                problems that required deeper technical exploration—problems in
+                infrastructure, optimization, and systems design.
+              </p>
+
+              <p>
+                The diploma years taught me an important lesson: knowing your
+                preferences matters as much as gaining experience. They ignited
+                my passion for backend systems, cloud architecture, and the
+                mathematics of optimization. In essence, this phase was the
+                compass that pointed me toward cloud computing and distributed
+                systems—the areas I'm now deeply immersed in.
               </p>
             </div>
           </div>
-          <div class="entry-main">
-            <p>
-              I completed my Diploma in Computer Science at BOSE, Cuttack, in
-              2024, graduating with an overall score of 89.7%. Those three years
-              gave me my first deep dive into the world of computing, where I
-              learned to appreciate both the theoretical underpinnings and the
-              practical applications of technology. It was during this time that
-              I built the foundation of my technical journey—understanding core
-              concepts, experimenting with projects, and discovering how much I
-              enjoy solving problems through code. More than grades, this phase
-              was about building confidence, developing discipline, and shaping
-              the curiosity that continues to guide my academic and professional
-              path today.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <div class="parallax-window bg2">
-        <h2><span>Beyond Academics</span></h2>
-      </div>
-      <section id="experience" class="static-content">
-        <div class="entry">
-          <div class="entry-main">
-            <p>
-              I love exploring the things that keep me curious and energized.
-              Whether it’s dancing, writing, reading books, or getting lost in
-              anime, these activities let me express myself and unwind. When I
-              need a creative escape or a way to relax, you’ll often find me
-              experimenting in the kitchen.
-            </p>
-
-            <p>
-              What truly excites me, however, is the thrill of research and
-              discovery. I enjoy diving into academic topics, experimenting with
-              new technologies, or even exploring ideas that might not seem
-              directly related to computer science. This curiosity drives me to
-              keep learning, pushing boundaries, and approaching challenges with
-              creativity—both inside the classroom and beyond.
-            </p>
-          </div>
+        <div class="parallax-window bg2">
+          <h2><span>Research Interest</span></h2>
         </div>
-      </section>
+        <section id="research-interest" class="static-content">
+          <div class="entry">
+            <div class="entry-header">
+              <p class="entry-title">
+                Cloud Computing & Distributed Systems Optimization
+              </p>
+            </div>
+            <div class="entry-main">
+              <p>
+                Cloud computing is my primary research passion, and it stems
+                from a deep fascination with how we can build systems that are
+                not just powerful, but <em>conscientious</em>. Over the past few
+                years, I've investigated critical challenges in cloud
+                infrastructure:
+              </p>
 
-      <!-- <section id="publications"class="static-content">
-        <h2>Publications</h2>
-        <div class="entry">
-          <p class="entry-title">
-            3D Finite Element Analysis of No-Insulation Coils
-          </p>
-          <p>Frodo Baggins, John Doe, Samwise Gamgee</p>
-          <p>10.1109/TASC.2023.3340648</p>
-        </div>
-      </section> -->
+              <p>
+                <strong>Task Scheduling & Workload Prediction:</strong> I've
+                designed algorithms to intelligently route jobs through cloud
+                systems, reducing latency and cost. My work explores how machine
+                learning and metaheuristic algorithms—from Whale Optimization to
+                nature-inspired swarm intelligence—can predict workload patterns
+                and make real-time scheduling decisions that adapt to changing
+                demands.
+              </p>
 
-      <!-- <section id="projects" class="static-content">
-        <h2>Projects</h2>
-        <div class="entry">
-          <div class="entry-header">
-            <p class="entry-title">
-              Multi-User Drawing Tool (github.com/name/repo)
-            </p>
-            <p class="date-location">Jan 2004</p>
-          </div>
-          <ul>
-            <li>
-              Developed an electronic classroom where multiple users can
-              simultaneously view and draw on a "chalkboard" with each person's
-              edits synchronized
-            </li>
-            <li><strong>Tools Used:</strong> C++, MFC</li>
-          </ul>
-        </div>
-        <div class="entry">
-          <div class="entry-header">
-            <p class="entry-title">
-              Synchronized Desktop Calendar (github.com/name/repo)
-            </p>
-            <p class="date-location">2002</p>
-          </div>
-          <ul>
-            <li>
-              Developed a desktop calendar with globally shared and synchronized
-              calendars, allowing users to schedule meetings with other users
-            </li>
-            <li><strong>Tools Used:</strong> C#, .NET, SQL, XML</li>
-          </ul>
-        </div>
-        <div class="entry">
-          <div class="entry-header">
-            <p class="entry-title">Custom Operating System</p>
-          </div>
-          <ul>
-            <li>
-              Built a UNIX-style OS with a scheduler, file system, text editor,
-              and calculator
-            </li>
-            <li><strong>Tools Used:</strong> C</li>
-          </ul>
-        </div>
-      </section> -->
+              <p>
+                <strong>Load Balancing & Virtualization:</strong> I've developed
+                hybrid optimization frameworks that balance computational load
+                across data centers while respecting energy constraints. Through
+                reinforcement learning-assisted approaches, I've achieved
+                significant improvements in SLA compliance and energy efficiency
+                on real-world Google and Alibaba cluster traces.
+              </p>
 
-      <div class="parallax-window bg3">
-        <h2><span>Research Interest</span></h2>
-      </div>
-      <section id="research-interest" class="static-content">
-        <div class="entry">
-          <div class="entry-header">
-            <p class="entry-title">Cloud Computing</p>
+              <p>
+                <strong>Distributed Systems & Orchestration:</strong> My
+                research dives into how distributed systems can be orchestrated
+                at scale—ensuring consistency, reliability, and resilience
+                across geographically dispersed resources. The engineering
+                challenges here are profound: how do we index spatiotemporal
+                data at high throughput? How do we manage resource allocation
+                across hybrid classical-quantum environments?
+              </p>
+
+              <p>
+                But what truly excites me is the
+                <strong>sustainability dimension</strong>. Cloud data centers
+                consume immense energy, and I'm driven by the vision of Green
+                Cloud Computing—where every optimization I design directly
+                translates to reduced carbon footprint and environmental
+                responsibility. This isn't just an engineering goal; it's a
+                moral imperative.
+              </p>
+            </div>
           </div>
-          <div class="entry-main">
-            <p>
-              My primary research passion lies in Cloud Computing, with a
-              specific focus on Green Cloud Computing. I'm fascinated not just
-              by the challenge of building scalable and resilient cloud
-              infrastructure, but by the critical need to do so sustainably. My
-              interest is in exploring novel approaches to minimize the energy
-              consumption of data centers, optimize resource allocation for a
-              lower carbon footprint, and design architectures that deliver high
-              performance with greater environmental responsibility. I believe
-              the future of technology depends on creating solutions that are
-              both powerful and conscious of their ecological impact.
-            </p>
+
+          <div class="entry">
+            <div class="entry-header">
+              <p class="entry-title">Geospatial Big Data Analytics</p>
+            </div>
+            <div class="entry-main">
+              <p>
+                Beyond traditional cloud computing, I've developed a strong
+                interest in geospatial big data—the convergence of
+                location-aware data, environmental monitoring, and cloud-native
+                analytics.
+              </p>
+
+              <p>
+                My research here focuses on
+                <strong>real-time environmental sensing and analysis</strong>.
+                I've built cloud-native digital twins that fuse open geospatial
+                datasets with real-time sensor streams to enable near-instant
+                decision support. For instance, my work on urban flood risk
+                assessment processes hundreds of geospatial layers in sub-second
+                response times, delivering actionable intelligence to city
+                planners and emergency responders. I've also explored
+                applications in civil and marine infrastructure monitoring,
+                where ML-driven damage prediction combined with geospatial
+                analytics can preemptively identify risks before they become
+                critical.
+              </p>
+
+              <p>
+                What captivates me is how cloud platforms enable us to process
+                planetary-scale environmental data in real time—turning raw
+                sensor feeds and satellite imagery into insights that can save
+                lives and protect ecosystems.
+              </p>
+            </div>
           </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <p class="entry-title">
+                Digital Twins: Bridging Physical & Digital Realities
+              </p>
+            </div>
+            <div class="entry-main">
+              <p>
+                Digital twins represent a frontier where cloud computing,
+                machine learning, and IoT converge. I'm fascinated by the
+                question:
+                <strong
+                  >How can we create faithful digital replicas of physical
+                  systems that not only monitor but actively <em>decide</em> and
+                  <em>act</em>?</strong
+                >
+              </p>
+
+              <p>
+                My research explores cloud-hosted digital twins for critical
+                infrastructure—from civil engineering structures to marine
+                installations. These aren't passive monitoring systems; they're
+                decision-intelligent frameworks that combine sensor fusion,
+                anomaly detection, and metaheuristic optimization to predict
+                failures, optimize maintenance schedules, and reduce response
+                latency during emergencies. The beauty of hosting these on cloud
+                platforms is the elasticity: as monitoring demands grow, the
+                system scales seamlessly.
+              </p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="entry-header">
+              <p class="entry-title">
+                Machine Learning: The Enabler of Everything
+              </p>
+            </div>
+            <div class="entry-main">
+              <p>
+                If I had to distill my research philosophy into one statement,
+                it would be:
+                <strong
+                  >Machine learning is the technology that opens doors when
+                  we're blocked by the constraints of our physical
+                  systems.</strong
+                >
+              </p>
+
+              <p>
+                Whether it's predicting quantum job suitability, forecasting
+                cloud workloads, detecting infrastructure damage, or learning
+                adaptive resource allocation policies—machine learning is the
+                common thread. Even in scenarios where classical algorithms
+                reach their limits, ML approaches like adaptive learning,
+                reinforcement learning, and hybrid decision intelligence break
+                through. When cloud resources are constrained or digital twins
+                have incomplete sensor data, machine learning fills the gaps,
+                learns from uncertainty, and makes intelligent decisions despite
+                imperfect information.
+              </p>
+
+              <p>
+                This is why I integrate ML into nearly every research project:
+                it's not a separate interest, but the fundamental multiplier
+                that amplifies the impact of every system I design.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div class="parallax-window bg3">
+          <h2><span>Beyond Academics</span></h2>
         </div>
+        <section id="beyond-academics" class="static-content">
+          <div class="entry">
+            <div class="entry-main">
+              <p>
+                I believe that curiosity is a 24/7 endeavor, and for me, the
+                boundaries between "academics" and "life" have blurred
+                beautifully.
+              </p>
 
-        <div class="entry">
-          <div class="entry-header">
-            <p class="entry-title">Data Analytics</p>
-          </div>
-          <div class="entry-main">
-            <p>
-              My interest in Data Analytics is centered on its intersection with
-              cloud platforms. I am less drawn to theoretical analysis and more
-              excited by the practical application of data pipelines that can be
-              implemented and scaled directly on the cloud. I enjoy working with
-              cloud-native tools to process massive datasets, build real-time
-              analytics systems, and make data-driven insights accessible and
-              efficient. For me, the true potential of data analytics is
-              unlocked when it's powered by the elasticity and robustness of
-              cloud infrastructure.
-            </p>
-          </div>
-        </div>
+              <p>
+                I'm an avid reader—books are my refuge and my teacher. There's
+                something magical about stepping into someone else's
+                perspective, whether through fiction, science, philosophy, or
+                research papers. I love to dance and sing; they're my creative
+                outlets when my mind needs to escape the world of algorithms and
+                architectures. And honestly, I do love good food—discovering new
+                cuisines is like exploring undocumented code, full of surprises
+                and delights.
+              </p>
 
-        <div class="entry">
-          <div class="entry-header">
-            <p class="entry-title">Human-Computer Interaction</p>
-          </div>
-          <div class="entry-main">
-            <p>
-              Ultimately, technology is built to serve people, which is why I am
-              deeply interested in Human-Computer Interaction (HCI). My focus is
-              on how the backend power of cloud computing and data analytics can
-              be translated into more intuitive, responsive, and meaningful user
-              experiences. I want to explore how we can leverage data to create
-              personalized interfaces and how robust cloud infrastructure can
-              ensure that digital interactions are seamless and accessible,
-              effectively bridging the gap between complex systems and the
-              end-user.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+              <p>
+                But if I'm being completely truthful, the thing that energizes
+                me most is <strong>research and discovery</strong>. It's not
+                relegated to my lab time or office hours; it's become how I
+                live. Every day brings new questions:
+                <em
+                  >Can we do this faster? Could that system work differently?
+                  What if we approached this problem from an entirely new
+                  angle?</em
+                >
+                Finding answers—or discovering entirely new questions—is
+                genuinely my favorite thing to do. It's not work to me; it's
+                living.
+              </p>
 
-    <footer>
-      <!-- <p>&copy; 2025 Ashutosh Mohapatra. All Rights Reserved.</p> -->
-    </footer>
+              <p>
+                I don't find myself drawn to competitive sports or large social
+                gatherings. My idea of a perfect day is diving deep into a
+                challenging problem, emerging with new insights, and sharing
+                those discoveries with people who care about making technology
+                better. That blend of curiosity, continuous learning, and the
+                pursuit of meaningful impact defines who I am both inside and
+                outside the classroom.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    <script src="./ab.js"></script>
+      <footer>
+        <p>&copy; 2025 Ashutosh Mohapatra. All Rights Reserved.</p>
+      </footer>
+
+      <script src="./ab.js"></script>
+    </div>
   </body>
 </html>

@@ -1,24 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 
 /* font-family: "Vujahday Script", cursive;
   font-weight: 400;
   font-style: normal; */
-
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 
 /* font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: 400-700;
   font-style: normal; */
 
-@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-
 /* font-family: "Alumni Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100-900;
   font-style: normal; */
 
-@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 /* font-family: "Alata", sans-serif;
   font-weight: 400;
   font-style: normal; */
@@ -53,12 +51,12 @@ body {
   flex-direction: column;
 }
 
-#main-content {
-  flex: 1;
-}
-
 body.no-scroll {
   overflow: hidden;
+}
+
+#main-content {
+  flex: 1;
 }
 
 /* =========================
@@ -346,307 +344,246 @@ nav .menu-list-container ul li a:hover::after {
 }
 /* #youCopythisBitch */
 
-/* ---------- Rest of home.css ---------- */
+/* ---------- Rest of pub.css ---------- */
 
-header {
-  height: 80vh;
+main.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 16px 80px;
+}
+
+.post {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.post-header {
+  margin-bottom: 1.5rem;
+}
+
+.post-title {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 2.8vw, 2.6rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+  text-align: center;
+  font-family: var(--heading-font);
+}
+
+.post-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted-color);
+  text-align: center;
+  font-family: var(--main-font);
+}
+
+.search-wrap {
+  margin: 0 0 1.2rem;
+}
+
+.search-wrap > input {
+  border: #33333367 0.001px solid;
+}
+
+.bibsearch-form-input {
+  width: min(100%, 340px);
+  border: 1px solid var(--divider-color);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--main-font);
+}
+
+.bibsearch-form-input:focus {
+  border-color: rgba(63, 125, 189, 0.65);
+  box-shadow: 0 0 0 3px rgba(63, 125, 189, 0.12);
+}
+
+.publications {
+  margin-top: 0.5rem;
+}
+
+.publications h2.bibliography {
+  margin: 2rem 0 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--divider-color);
+  color: var(--muted-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: right;
+  letter-spacing: 0.02em;
+  font-family: var(--heading-font);
+}
+
+.publications ol.bibliography {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.publications ol.bibliography li {
+  margin-bottom: 1.2rem;
+}
+
+.row {
+  display: block;
+}
+
+.pub-main {
+  width: 100%;
+}
+
+.title {
+  font-weight: 700;
+  color: var(--text-color);
+  font-size: 1.08rem;
+  line-height: 1.45;
+  margin-bottom: 0.35rem;
+  font-family: var(--main-font);
+}
+
+.author {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #3d3d3d;
+  font-family: var(--main-font);
+}
+
+.author em {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.author a {
+  color: var(--theme-color);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(63, 125, 189, 0.8);
+}
+
+.author a:hover {
+  border-bottom-style: solid;
+}
+
+.periodical {
+  margin-top: 0.2rem;
+  font-size: 0.94rem;
+  color: var(--text-color);
+  font-family: var(--main-font);
+}
+
+.periodical em {
+  font-style: italic;
+}
+
+.links {
+  margin-top: 0.55rem;
   display: flex;
-  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
   align-items: center;
 }
 
-.head > h1 {
-  font-family: "Vujahday Script", cursive;
-  font-size: 6.25rem; /* 100px */
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-.head > p {
-  font-family: "Lora", serif;
-  font-size: 1.875rem; /* 30px */
-  text-align: center;
-  padding: 0;
-  margin: 0;
-}
-
-@media (max-width: 1210px) {
-  .head > h1 {
-    font-size: 4.6875rem; /* 75px */
-  }
-
-  .head > p {
-    font-size: 1.25rem; /* 20px */
-  }
-}
-
-@media (max-width: 680px) {
-  .head > h1 {
-    font-size: 3.75rem; /* 60px */
-  }
-
-  .head > p {
-    font-size: 0.9375rem; /* 15px */
-  }
-}
-
-@media (max-width: 520px) {
-  .head > h1 {
-    font-size: 3.125rem; /* 50px */
-  }
-
-  .head > p {
-    font-size: 0.8125rem; /* 13px */
-  }
-
-  header {
-    height: 100vh;
-  }
-}
-
-/* @media (max-width: 380px) {
-  .head>h1 {
-    font-size: 30px;
-    width: 200px;
-  }
-  
-  .head > p {
-    font-size: px;
-  }
-} */
-
-@media (min-width: 1600px) {
-  .head > h1 {
-    font-size: 9.375rem; /* 150px */
-  }
-
-  .head > p {
-    font-size: 2.5rem; /* 40px */
-  }
-}
-
-@media (min-width: 2000px) {
-  .head > h1 {
-    font-size: 12.5rem; /* 200px */
-  }
-
-  .head > p {
-    font-size: 3.125rem; /* 50px */
-  }
-}
-
-.content {
-  height: 80vh;
-}
-
-@media (max-width: 700px) {
-  .content {
-    height: 60vh;
-  }
-}
-
-#about {
-  scroll-margin-top: 40vh;
-}
-
-.am {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  align-content: center;
-  margin-left: 1rem;
-}
-
-#AB {
-  position: relative;
+.link-btn,
+.bib-btn,
+.copy-btn {
+  appearance: none;
+  border: 1px solid var(--text-color);
+  background: transparent;
+  color: var(--text-color);
+  padding: 0.25rem 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  border: #33333367 1px solid;
   cursor: pointer;
-  margin-left: 0.625rem; /* 10px */
-  z-index: 4;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  font-family: var(--heading-font);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes slide-right {
-  from {
-    transform: translateX(-40%);
-  }
-  to {
-    transform: translateX(25%);
-  }
+.link-btn:hover,
+.bib-btn:hover,
+.copy-btn:hover,
+.link-btn:focus-visible,
+.bib-btn:focus-visible,
+.copy-btn:focus-visible {
+  color: var(--theme-color);
+  border-color: var(--theme-color);
+  background: rgba(63, 125, 189, 0.04);
 }
 
-@keyframes slide-left {
-  from {
-    transform: translateX(40%);
-  }
-  to {
-    transform: translateX(-25%);
-  }
+.doi-btn {
+  color: var(--text-color);
 }
 
-.am > h1 {
-  font-family: "Alumni Sans", sans-serif;
-  font-weight: 700;
-  font-size: 18.75rem; /* 300px */
-  color: rgba(0, 0, 0, 0.059);
+.pdf-btn {
+  color: var(--text-color);
+}
+
+.bibtex {
+  margin-top: 0.8rem;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+  opacity: 1;
+}
+
+.bibtex.hidden {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bibtex:not(.hidden) {
+  max-height: 700px;
+}
+
+.highlight {
   margin: 0;
-  grid-row: 1/2;
-  grid-column: 1/2;
-  animation-name: slide-right;
-  animation-timing-function: ease-out;
-  animation-timeline: view();
-}
-
-.am > span,
-pre,
-div {
-  grid-row: 1/2;
-  grid-column: 1/2;
-  align-content: center;
-  justify-self: center;
-  font-family: "Alata", sans-serif;
-  font-size: 1.875rem; /* 30px */
-}
-
-@media (max-width: 1210px) {
-  .am > h1 {
-    font-size: 12.5rem;
-  } /* 200px */
-  .am pre,
-  div,
-  #AB {
-    font-size: 1.5625rem;
-  } /* 25px */
-}
-
-@media (max-width: 680px) {
-  .am > h1 {
-    font-size: 10rem;
-  } /* 160px */
-  .am pre,
-  div,
-  #AB {
-    font-size: 1.25rem;
-  } /* 20px */
-}
-
-@media (max-width: 520px) {
-  .am > h1 {
-    font-size: 8.75rem;
-  } /* 140px */
-  .am pre,
-  div,
-  #AB {
-    font-size: 1.0625rem;
-  } /* 17px */
-}
-
-@media (max-width: 380px) {
-  .am > h1 {
-    font-size: 7.5rem;
-  } /* 120px */
-  .am pre,
-  div,
-  #AB {
-    font-size: 0.9375rem;
-  } /* 15px */
-}
-
-@media (min-width: 1600px) {
-  .am > h1 {
-    font-size: 25rem;
-  } /* 400px */
-  .am pre,
-  div,
-  #AB {
-    font-size: 2.5rem;
-  } /* 40px */
-}
-
-@media (min-width: 2000px) {
-  .am > h1 {
-    font-size: 31.25rem;
-  } /* 500px */
-  .am pre,
-  div,
-  #AB {
-    font-size: 3.125rem;
-  } /* 50px */
-}
-
-.socials {
-  width: 70vw;
-  display: flex;
-  justify-content: space-around;
-  justify-self: end;
-  margin-right: 3.125rem; /* 50px */
-}
-
-@media (max-width: 380px) {
-  .socials {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.socials > svg {
-  z-index: 1;
-  width: 3.75rem; /* 60px */
-  margin: 0.625rem; /* 10px */
-  cursor: pointer;
-}
-
-@media (max-width: 1210px) {
-  .socials > svg {
-    width: 3rem; /* 40px */
-  }
-}
-
-@media (min-width: 1600px) {
-  .socials > svg {
-    width: 5rem; /* 80px */
-  }
-}
-
-@media (min-width: 2000px) {
-  .socials > svg {
-    width: 6.25rem; /* 100px */
-  }
-}
-
-.skill > h1 {
-  text-align: right;
-  animation-name: slide-left;
-  animation-timing-function: ease-out;
-  animation-timeline: view();
-}
-
-.cont > h1 {
-  margin-left: 1.25rem; /* 20px */
-}
-
-/* animation at header */
-.head {
+  background: var(--code-bg);
+  border: 1px solid var(--divider-color);
+  border-radius: 8px;
   overflow: hidden;
 }
 
-@keyframes slide-up {
-  from {
-    transform: translateY(200%);
-  }
-  to {
-    transform: translateY(0%);
-  }
+.code-display-wrapper {
+  display: block;
+  position: relative;
 }
 
-.head > h1 {
-  animation: slide-up 1s cubic-bezier(0, 0.1, 0.12, 0.99);
+pre {
+  margin: 0;
+  padding: 1rem 1.1rem 0.75rem;
+  overflow-x: auto;
+  color: #1c1c1c;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-.head > p {
-  animation: slide-up 1s cubic-bezier(0, 0.1, 0.12, 0.99) 0.6s backwards;
+.copy-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  background: rgba(255, 255, 255, 0.85);
 }
 
-/* --- FOOTER: Sticky Footer with Flexbox --- */
+.hidden-item {
+  display: none !important;
+}
+
+/* Footer (uniform) */
 footer {
   display: flex;
   height: auto;
@@ -663,6 +600,20 @@ footer {
 
 footer p {
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .post-title {
+    font-size: 2rem;
+  }
+
+  .publications h2.bibliography {
+    text-align: left;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 1600px) {

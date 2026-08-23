@@ -33,13 +33,17 @@ body {
 }
 
 body.no-scroll {
-    overflow: hidden;
-  }
-  
-/* NavBar */
+  overflow: hidden;
+}
+
+/* =========================
+   UNIFORM NAVBAR + HAMBURGER
+   ========================= */
+
+/* ---------- Navbar ---------- */
 .navbar {
   padding: 2rem 3rem;
-  font-family: var(--heading-font);
+  font-family: "Alata", sans-serif;
   font-weight: 100;
   font-style: normal;
 }
@@ -56,33 +60,33 @@ body.no-scroll {
 .navbar > ul li a {
   position: relative;
   text-decoration: none;
-  color: var(--secondary-color);
+  color: #333;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .navbar > ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--primary-color);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .navbar > ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar > ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 /* responsive for smaller screen (laptop to smartphone) */
 @media (max-width: 1210px) {
   .navbar {
-    padding: 2rem 3rem 1rem 3rem;
+    padding: 2rem 3rem;
   }
 
   .navbar > ul {
@@ -96,7 +100,7 @@ body.no-scroll {
 
 @media (max-width: 680px) {
   .navbar {
-    padding: 2rem 1.5rem 1rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .navbar > ul {
@@ -120,7 +124,7 @@ body.no-scroll {
 /* responsive for larger screens (desktops to tv) */
 @media (min-width: 1600px) {
   .navbar {
-    padding: 3rem 4rem 2rem 4rem;
+    padding: 3rem 4rem;
   }
 
   .navbar > ul {
@@ -134,7 +138,7 @@ body.no-scroll {
 
 @media (min-width: 2000px) {
   .navbar {
-    padding: 4rem 5rem 0rem 5rem;
+    padding: 4rem 5rem;
   }
 
   .navbar > ul {
@@ -146,19 +150,24 @@ body.no-scroll {
   }
 }
 
+/* ---------- Hamburger / Mobile Menu ---------- */
+/* #youCopythisBitch */
 .wrapper {
   display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  z-index: 1000;
 }
 
 nav#nav-menu {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  color: #333;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   right: 0;
   z-index: 1000;
   overflow: hidden;
@@ -174,22 +183,30 @@ nav .menu-icon-container {
 }
 
 nav .menu-list-container {
-  position: absolute;
-  top: 30%;
-  width: 100%;
-  transform: translate(100%, 0);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
   opacity: 0;
-  transition: transform 0.6s, opacity 1s;
+  visibility: hidden;
+  filter: blur(6px);
+  transition: transform 0.55s ease, opacity 0.45s ease, visibility 0s linear 0.45s, filter 0.45s ease;
+  pointer-events: none;
+  z-index: 2;
 }
 
 nav .menu-list-container ul {
   list-style: none;
-  transform: translate(0, -50%);
   width: 100%;
-  font-family: var(--heading-font);
+  text-align: center;
+  font-family: "Alata", sans-serif;
   font-weight: 100;
   font-style: normal;
   padding: 0;
+  margin: 0;
+  transform: none;
 }
 
 nav .menu-list-container ul li {
@@ -201,31 +218,30 @@ nav .menu-list-container ul li {
 }
 
 nav .menu-list-container ul li a {
-    display: inline-block; 
-    position: relative;
-    text-decoration: none;
-    color: var(--Alter-color);
-  }
-  
-  nav .menu-list-container ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--Alter-color);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  nav .menu-list-container ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
 
-/* Menu Icon (Hamburger) */
+nav .menu-list-container ul li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+nav .menu-list-container ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .menu-icon {
   display: block;
   float: left;
@@ -237,10 +253,11 @@ nav .menu-list-container ul li a {
   display: block;
   width: 22px;
   height: 4px;
-  background: #333333;
+  background-color: #333333;
   margin-bottom: 2px;
   border-radius: 1px;
-  transition: all 0.4s ease-out;
+  /* mmyykk */
+  transition: background-color 0.35s ease, all 0.4s ease-out;
 }
 
 .menu-icon span.bar1 {
@@ -255,16 +272,31 @@ nav .menu-list-container ul li a {
   margin-top: 0px;
 }
 
-/* when menu is open*/
+/* when menu is open */
 .wrapper.active nav {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) !important;
+  background: rgba(0, 0, 0, 0.45);
   /* for older browser versions */
   -webkit-backdrop-filter: blur(10px);
 }
 
 .wrapper.active nav .menu-list-container {
-  transform: translate(0, 0);
+  transform: translateX(0);
   opacity: 1;
+  visibility: visible;
+  filter: blur(0);
+  pointer-events: auto;
+  transition: transform 0.55s ease, opacity 0.45s ease, visibility 0s linear 0s, filter 0.45s ease;
+}
+
+/* mmyykk */
+.wrapper.active nav .menu-list-container ul li a {
+  color: #ffffff;
+}
+
+/* mmyykk */
+.wrapper.active .menu-icon span {
+  background-color: #ffffff;
 }
 
 .menu-icon.active {
@@ -287,6 +319,9 @@ nav .menu-list-container ul li a {
 .menu-icon.active .bar3 {
   transform: rotate(-90deg) translateX(6px);
 }
+/* #youCopythisBitch */
+
+/* ---------- Rest of ab.css ---------- */
 
 /* header */
 h1 {
@@ -321,7 +356,7 @@ section {
 .about-container {
   width: 80rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
   margin: auto;
@@ -329,6 +364,8 @@ section {
 }
 
 .about-image {
+  position: sticky;
+  top: 5rem;
   flex-shrink: 0;
   width: 18.75rem; /* 300px */
   height: 25rem; /* 400px */
@@ -336,6 +373,7 @@ section {
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.387) 0rem 0.625rem 0.9375rem -0.1875rem,
     rgba(0, 0, 0, 0.509) 0rem 0.25rem 0.375rem -0.125rem;
+  align-self: flex-start;
 }
 
 .about-image img {
@@ -348,6 +386,7 @@ section {
   max-width: 45rem;
   position: relative;
   top: 4rem;
+  flex: 1;
 }
 
 .about-text img {
@@ -376,7 +415,7 @@ section {
   color: var(--primary-color);
   padding-left: 6.25rem; /* 100px */
   text-indent: 5rem;
-  text-align: justify;
+  text-align: left;
   position: relative;
   bottom: 3rem;
 }
@@ -495,33 +534,34 @@ section {
 /* --- General Content Styles --- */
 h2 {
   font-family: var(--heading-font);
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--Alter-color);
-  padding-bottom: 0.4rem;
-  margin-top: 0;
-  margin-bottom: 1.2rem;
-  letter-spacing: 0.15rem;
+  font-size: clamp(2rem, 2.8vw, 2.6rem);
+  font-weight: 500;
+  color: #212529;
+  padding: 0 0 0.5rem;
+  margin: 0;
+  letter-spacing: -0.02em;
   text-align: center;
-  filter: drop-shadow(5px 5px 5px rgb(0, 0, 0));
+  filter: none;
+  text-shadow: none;
 }
 
 h2 span {
-  height: 90%;
-  border-bottom: 0.2rem solid white;
+  height: auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  padding-bottom: 0.3rem;
 }
 
 /* Responsive styles for Headings */
 @media (max-width: 520px) {
   h2 {
-    font-size: 2.35rem;
+    font-size: 2.1rem;
   }
 }
 
 /* responsive for larger screens (desktops to tv) */
 @media (min-width: 1600px) {
   h2 {
-    font-size: 3.8rem;
+    font-size: 3rem;
   }
   .entry-title {
     font-size: 2rem !important;
@@ -536,7 +576,7 @@ h2 span {
 
 @media (min-width: 2000px) {
   h2 {
-    font-size: 4.5rem;
+    font-size: 3.4rem;
   }
   .entry-title {
     font-size: 2.2rem !important;
@@ -550,8 +590,17 @@ h2 span {
 }
 
 /* --- Entry Styling (Education, Experience, etc.) --- */
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .static-content {
-  margin: 3rem 0rem 3rem 0rem;
+  margin: 1rem 0rem 1rem 0rem;
+  padding: 0;
+  width: 90%;
+  align-self: center;
 }
 
 .entry {
@@ -577,9 +626,7 @@ h2 span {
 
 .entry-main p {
   margin-bottom: 0.5rem;
-  text-indent: 1.875rem;
   font-size: 1.1rem;
-  text-align: justify;
 }
 
 /* Responsive styles for Entries */
@@ -618,11 +665,13 @@ ul {
     padding-left: 1.25rem;
   }
 
+
   li {
     font-size: 1.1rem;
     margin-bottom: 0.4rem;
   }
 } 
+
 
 @media (max-width: 520px) {
   li {
@@ -636,6 +685,7 @@ ul {
   font-weight: bold;
   font-size: 1rem;
 }
+
 
 #publications p {
   margin: 0.2rem 0;
@@ -657,41 +707,55 @@ ul {
   }
 } */
 
-/* --- Footer --- */
+/* --- Footer (uniform) --- */
 footer {
   display: flex;
-  height: 2rem;
+  height: auto;
+  min-height: 2rem;
   font-size: 0.7rem;
   align-items: center;
   justify-content: center;
   padding: 1.2rem;
   background: #000000;
   color: var(--Alter-color);
+  margin-top: auto;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (min-width: 1600px) {
+  footer {
+    font-size: 0.9rem;
+    min-height: 2.5rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  footer {
+    font-size: 1rem;
+    min-height: 3rem;
+  }
 }
 
 /* --- The Parallax Window --- */
 .parallax-window {
-  min-height: 20vh;
-
-  background-attachment: fixed;
+  min-height: auto;
+  background: transparent !important;
+  background-attachment: initial;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-
+  background-size: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 /* --- Assigning different background images to each window --- */
-.bg1 {
-  background-image: url("../images/Education_bg.jpeg");
-}
-
-.bg2 {
-  background-image: url("../images/BayondAcademics_bg.jpg");
-}
-
+.bg1,
+.bg2,
 .bg3 {
-  background-image: url("../images/Interest_bg.jpg");
+  background-image: none !important;
 }
